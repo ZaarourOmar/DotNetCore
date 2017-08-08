@@ -1,38 +1,61 @@
 ﻿body {
-    font-family:'Open Sans';
-    font-size:14px;
-       
+    font-family: 'Open Sans';
+    font-size: 14px;
+    margin: 0;
 }
 
-label{
-    font-weight:bold;
-    display:block;
+label {
+    font-weight: bold;
+    display: block;
 }
 
-input[type=text],input[type=password],textarea{
-    width:150px;
+input[type=text], input[type=password], textarea {
+    width: 150px;
 }
 
-#main{
-background:#eee;
+#main {
+    background: #eee;
+    margin: 0;
+    padding: 4px;
 }
 
-#footer{
-    background:#222;
-    color:#eee;
+#footer {
+    background: #222;
+    color: #eee;
+    padding: 8px 5px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
-.headshot{
-    width:50px;
+.headshot {
+    max-width: 50px;
+    border: 1px solid #222;
+    padding: 3px;
 }
 
-.menu{
-    font-size:14px;
+.menu {
+    font-size: 14px;
 }
 
-.menu li{
-    list-style-type:none;
+    .menu li {
+        list-style-type: none;
+    }
+
+        .menu li.active {
+            font-weight: bold;
+        }
+
+#wrapper {
+    margin-left: 250px;
 }
-.menu li.active{
-    font-weight:bold;
+
+#sidebar {
+    background: #2a2c36;
+    color: #eee;
+    position: fixed;
+    height: 100%;
+    width: 250px;
+    overflow: hidden;
+    left: 0;
 }
