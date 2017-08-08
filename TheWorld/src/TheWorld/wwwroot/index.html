@@ -4,28 +4,44 @@
     <meta charset="utf-8" />
     <title>The World Project</title>
 
-    <link rel="stylesheet" href="css/site.css"/>
+    <link rel="stylesheet" href="css/site.css" />
 </head>
 <body>
-    <div>
-        <h1> The World</h1>
-        <p>This website is a pluralsight project using the all new .NET Core! More to come :)</p>
+    <div id="sidebar">
+        <img src="images/Omar-personal-photo.png" alt="Headshot" class="headshot" />
+        <span>Omar Zaarour</span>
+
+        <ul class="menu">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+
+        </ul>
     </div>
-    <form>
-        <div>
-            <label>Date</label>
-            <input />
-        </div>
-        <div>
-            <label>Location</label>
-            <input />
-        </div>
-
-        <input type="submit" value="Submit now!"/>
-    </form>
-
     <div>
-        &copy; Omar Zaarour, 2017
+        <div id="main">
+            <div>
+                <h1> The World</h1>
+                <p>This website is a pluralsight project using the all new .NET Core! More to come :)</p>
+            </div>
+            <form>
+                <div>
+                    <label>Date</label>
+                    <input />
+                </div>
+                <div>
+                    <label>Location</label>
+                    <input />
+                </div>
+
+                <input type="submit" value="Add" />
+            </form>
+
+        </div>
+
+        <div id="footer">
+            &copy; Omar Zaarour, 2017
+        </div>
     </div>
 </body>
 </html>

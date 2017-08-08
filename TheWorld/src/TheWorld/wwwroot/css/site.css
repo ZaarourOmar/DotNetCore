@@ -3,3 +3,36 @@
     font-size:14px;
        
 }
+
+label{
+    font-weight:bold;
+    display:block;
+}
+
+input[type=text],input[type=password],textarea{
+    width:150px;
+}
+
+#main{
+background:#eee;
+}
+
+#footer{
+    background:#222;
+    color:#eee;
+}
+
+.headshot{
+    width:50px;
+}
+
+.menu{
+    font-size:14px;
+}
+
+.menu li{
+    list-style-type:none;
+}
+.menu li.active{
+    font-weight:bold;
+}
