@@ -1,0 +1,48 @@
+﻿@{
+
+    ViewBag.Title = "Home Page";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>The World - @ViewBag.Title</title>
+
+    <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+    <div id="sidebar">
+        <img src="images/Omar-personal-photo.png" alt="Headshot" class="headshot" />
+        <span id="userName">Omar Zaarour</span>
+
+        <ul class="menu">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+
+        </ul>
+    </div>
+    <div id="wrapper">
+        <div id="main">
+
+            <div>
+                <button id="sidebarToggle">Hide Menu</button>
+            </div>
+           @RenderBody()
+
+        </div>
+
+        <div id="footer">
+            &copy; Omar Zaarour, 2017
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="js/site.js">
+
+    </script>
+</body>
+</html>
