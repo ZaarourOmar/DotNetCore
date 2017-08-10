@@ -21,8 +21,12 @@ namespace TheWorld
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            if (env.IsEnvironment("Development")) // look in the project properties->Debug, other environments can be added
+            {
+                app.UseDeveloperExceptionPage(); // show detailed exeption in the browser
+            }
 
             app.UseStaticFiles();
 
