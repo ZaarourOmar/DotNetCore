@@ -3,19 +3,27 @@
 // We use anonymous function here to esnure that everything becomes in the private scope of this file.
 
 (function () {
-    var ele = document.getElementById("userName");
-    ele.innerHTML = "some other username";
 
+    var sidebar = $("#sidebar");
+    var wrapper = $("#wrapper");
 
+    var hidden = false;
+    $("#sidebarToggle").on("click", function () {
+        sidebar.toggleClass("hide-sidebar");
+        wrapper.toggleClass("hide-sidebar");
+        hidden = !hidden;
+        if(hidden)
+        {
+            $("#sidebarToggle").text("Show menu");
+        }
+        else
+        {
+            $("#sidebarToggle").text("Hide menu");
 
-    var main = document.getElementById("main");
+        }
 
-    main.onmouseenter = function () {
-        main.style.background = "#888";
-    };
-
-
-    main.onmouseleave = function () {
-        main.style.background = "";
-    };
-})("some parameter"); // param is optional
+        // we can do this by checking if $(this).hasclass(hide-sidebar) and set the text accordingly
+    });
+    
+    
+})();
