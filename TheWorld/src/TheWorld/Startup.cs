@@ -23,7 +23,8 @@ namespace TheWorld
 
             var builder = new ConfigurationBuilder()
                 .SetBasePath(_env.ContentRootPath)
-                .AddJsonFile("config.json");
+                .AddJsonFile("config.json")
+                .AddEnvironmentVariables();
             _config = builder.Build();
         }
         // This method gets called by the runtime. Use this method to add services to the container.
