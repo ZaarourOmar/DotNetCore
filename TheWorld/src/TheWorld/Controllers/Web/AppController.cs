@@ -15,7 +15,7 @@ namespace TheWorld.Controllers.Web
         private IMailService _mailService;
         private IConfigurationRoot _config;
 
-        public AppController(IMailService mailService,IConfigurationRoot config)
+        public AppController(IMailService mailService, IConfigurationRoot config)
         {
             _mailService = mailService;
             _config = config;
@@ -34,7 +34,10 @@ namespace TheWorld.Controllers.Web
         [HttpPost]
         public IActionResult Contact(ContactVM vm)
         {
-            _mailService.SendEmail(_config["MailSettings:ToAddress"], vm.Email, "Contact", vm.Message);
+            if (ModelState.IsValid)
+            {
+                _mailService.SendEmail(_config["MailSettings:ToAddress"], vm.Email, "Contact", vm.Message);
+            }
             return View();
         }
         public IActionResult About()
