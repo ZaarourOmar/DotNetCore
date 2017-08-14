@@ -7,15 +7,32 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using TheWorld.Services;
 
 namespace TheWorld
 {
     public class Startup
     {
+        private IHostingEnvironment _env;
+
+        public Startup(IHostingEnvironment env)
+        {
+            _env = env;
+        }
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            if (_env.IsEnvironment("Development"))
+            {
+                //services.AddTransient<IMailService, MailService>(); // this means that the app will create an instance if mail service and keep it cached around if someone needs it
+                services.AddScoped<IMailService, FakeMailService>(); // this means that the app will create an instance for each request that comes in
+                                                                 //services.AddSingleton<IMailService, MailService>(); // this means that only one is there
+            }
+            else
+            {
+                // Use a real mail service
+            }
             //dependency injection
             services.AddMvc();
         }
